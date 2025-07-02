@@ -1,8 +1,13 @@
 name: Greeting
-on: [push, workflow_dispatch]
+
+on:
+  push:
+  workflow_dispatch:
+
 jobs:
-  Greet
+  Greet:
     runs-on: ubuntu-latest
+
     steps:
-      -name: Greets
-       runs: echo "Hello World"
+      - name: Greets
+        run: echo "Hello World"
