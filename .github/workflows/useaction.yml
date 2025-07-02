@@ -17,5 +17,20 @@ jobs:
     - name: Test Cases test
       run: npm run test
     - name: Update status
-      run: echo "Deployed Done"
-  
+      run: echo "Testing Completed"
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Installation Node js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Check version
+      run: node -v
+    - name: Install dependency
+      run: npm install
+    - name: deploy
+      run: echo "Deployed"
