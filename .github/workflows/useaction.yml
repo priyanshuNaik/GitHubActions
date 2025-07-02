@@ -1,0 +1,16 @@
+name: Build the App
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Installation Node js
+      uses: actions/setup-node@v4
+      with:
+      node-version: '20'
+    - name: Check version
+      run: node -v
+    - name: Install dependency
+      run: npm ci
+    - name: Update status
+      echo "Deployed Done"
