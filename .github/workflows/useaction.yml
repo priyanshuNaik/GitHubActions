@@ -13,4 +13,4 @@ jobs:
     - name: Install dependency
       run: npm ci
     - name: Update status
-      echo "Deployed Done"
+      run: echo "Deployed Done"
